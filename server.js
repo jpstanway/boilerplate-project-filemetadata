@@ -2,10 +2,11 @@
 
 var express = require('express');
 var cors = require('cors');
+var app = express();
 
 // require and use "multer"...
-
-var app = express();
+var multer = require('multer');
+app.use(multer({dest: 'uploads/'}));
 
 app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
